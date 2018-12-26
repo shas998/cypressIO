@@ -15,7 +15,7 @@ workflows:
       # checks out code and installs dependencies once
       - cypress/install:
           # and builds the app using this command
-          build: 'npm run build'
+          build: 'npm install'
 
       # runs on 3 machines, load balances tests
       # and records on Cypress Dashboard
