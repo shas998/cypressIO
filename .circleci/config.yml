@@ -1,9 +1,9 @@
-version: 2.1
-orbs:
-  cypress: cypress-io/cypress@1.0.0
-workflows:
+version: 2
+jobs:
   build:
-    jobs:
-      - cypress/run:
-          executor: cypress/base-8
-          start: 'npm start' # start server before running tests
+    docker:
+      - image: circleci/cypress@3.1.4
+
+    steps:
+      - checkout
+      - run: cypress run
